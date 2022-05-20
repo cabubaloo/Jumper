@@ -1,25 +1,26 @@
 using System;
+using System.Collections.Generic;
 namespace Jumper
 {
     class Parachute
     {
         public void PrintParachute(int misses) //prints the parachuter based on the amount of misses
         {
-            string[] paraList = {"  ___", " /___\\  ", " \\   /", "  \\ /","   O","  /|\\","  / \\"};
+            List<string> paraList = new List<string>(){"  ___", " /___\\  ", " \\   /", "  \\ /","   O","  /|\\","  / \\"};
 
             if(misses >= 4)
             {
                 for(int i = 0; i < 4; i++)
                 {
-                    paraList[i] = " ";
+                    paraList.RemoveAt(0);
                 }
-                paraList[4] = "   X";
+                paraList[0] = "   X";
             }
             else
             {
                 for(int i = 0; i < misses; i++)
                 {
-                    paraList[i] = " ";
+                    paraList.RemoveAt(0);
                 }
             }
 
