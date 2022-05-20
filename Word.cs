@@ -6,7 +6,7 @@ namespace Jumper
         private readonly Random _random = new Random();
         public string WordGen() //gives a random 5 letter word
         {
-            string[] wordList = {"mouse", "crash", "paint", "drive", "break", "slide"};
+            string[] wordList = {"mouse", "crash", "paint", "drive", "break", "slide", "death"};
             int count = 0;
 
             foreach(string forString in wordList)
