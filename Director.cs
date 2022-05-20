@@ -9,9 +9,6 @@ namespace Jumper
         {
             //Generates the users random word
             string randomWord = word.WordGen();
-
-            int num = 0;
-            parachute.PrintParachute(num);
         }
     }
 }
