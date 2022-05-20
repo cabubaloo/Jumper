@@ -8,6 +8,8 @@ namespace Jumper
         {
             List<string> paraList = new List<string>(){"  ___", " /___\\  ", " \\   /", "  \\ /","   O","  /|\\","  / \\"};
 
+            Console.WriteLine();
+
             if(misses >= 4)
             {
                 for(int i = 0; i < 4; i++)
@@ -29,7 +31,8 @@ namespace Jumper
                 Console.WriteLine(i);
             }
 
-            //THIS FUNCTION IS INCOMPLETE, IT CURRENTLY ONLY PRINTS THE PARACHUTER WITHOUT CHANGES
+            Console.WriteLine();
+            Console.WriteLine("^^^^^^^");
         }
     }
 }
