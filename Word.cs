@@ -4,9 +4,10 @@ namespace Jumper
     class Word
     {
         private readonly Random _random = new Random();
-        public string WordGen() //gives a random 5 letter word
+        public string WordGen() //gives a random 5 letter word (no double letters!)
         {
-            string[] wordList = {"mouse", "crash", "paint", "drive", "break", "slide", "death", "stick"};
+            List<string> wordList = new List<string>();
+            wordList = {"mouse", "crash", "paint", "drive", "break", "slide", "death"};
             int count = 0;
 
             foreach(string forString in wordList)
@@ -19,7 +20,8 @@ namespace Jumper
             return word;
         }
 
-        public List<string> BlankGen() //generates a blank list of 5 _
+        
+        public List<string> BlankGen() //generates a blank list of 5 _ 
         {
             List<string> blankList = new List<string>(){"_", "_", "_", "_", "_"};
             return blankList;

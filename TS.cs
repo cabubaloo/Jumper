@@ -10,5 +10,15 @@ namespace Jumper
         {
             //Prints the list of characters passed, if the string holds {_, _, A, _, L}, should look like this: _ _ A _ L
         }
+
+        public void PrintBlanks(List<string> blanklist)
+        {
+            // Takes a blanklist and prints it to the console. 
+
+            Console.WriteLine(blanklist);
+        }
+
     }
+
+       
 }
