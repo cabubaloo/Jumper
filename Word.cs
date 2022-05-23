@@ -6,7 +6,7 @@ namespace Jumper
         private readonly Random _random = new Random();
         public string WordGen() //gives a random 5 letter word
         {
-            string[] wordList = {"mouse", "crash", "paint", "drive", "break", "slide", "death"};
+            string[] wordList = {"mouse", "crash", "paint", "drive", "break", "slide", "death", "stick"};
             int count = 0;
 
             foreach(string forString in wordList)
@@ -33,10 +33,20 @@ namespace Jumper
             //POSSIBLE ERROR: user may give an int instead of a string
         }
 
-        public List<string> updateBlank(List<string> updateThisList, int indexToChange, string changeIndexToThis) //changes the lists underscores into the desired letter
+        public List<string> UpdateBlank(List<string> updateThisList, int indexToChange, string changeIndexToThis) //changes the lists underscores into the desired letter
         {
             updateThisList[indexToChange] = changeIndexToThis;
             return updateThisList;
+        }
+
+        public List<string> SplitString(string word)
+        {
+            List<string> wordlist = new List<string>(){};
+            for(int i = 0; i < word.Length; i++)
+            {
+                wordlist.Add(word.Substring(i, i + 1));
+            }
+            return wordlist;
         }
 
     }

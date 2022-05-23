@@ -6,7 +6,13 @@ namespace Jumper
     {
         public void PrintParachute(int misses) //prints the parachuter based on the amount of misses
         {
-            List<string> paraList = new List<string>(){"  ___", " /___\\  ", " \\   /", "  \\ /","   O","  /|\\","  / \\"};
+            List<string> paraList = new List<string>(){"  ___",
+                                                       " /___\\  ",
+                                                       " \\   /",
+                                                       "  \\ /",
+                                                       "   O",
+                                                       "  /|\\",
+                                                       "  / \\" };
 
             Console.WriteLine();
 
