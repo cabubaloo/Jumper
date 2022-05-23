@@ -31,5 +31,25 @@ namespace Jumper
 
             }
         }
+        public List<string> BlankGen() //generates a blank list of 5 _
+        {
+            List<string> blankList = new List<string>(){"_", "_", "_", "_", "_"};
+            return blankList;
+        }
+
+        public string LetterGuess() //asks the user for input
+        {
+            Console.WriteLine("Guess a letter [a-z]: ");
+            String returnString = Console.ReadLine();
+            return returnString;
+            //POSSIBLE ERROR: user may give an int instead of a string
+        }
+
+        public List<string> updateBlank(List<string> updateThisList, int indexToChange, string changeIndexToThis) //changes the lists underscores into the desired letter
+        {
+            updateThisList[indexToChange] = changeIndexToThis;
+            return updateThisList;
+        }
+
     }
 }
