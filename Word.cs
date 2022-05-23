@@ -4,7 +4,7 @@ namespace Jumper
     class Word
     {
         private readonly Random _random = new Random();
-        public string WordGen() //gives a random 5 letter word (no double letters!)
+        public string WordGen()//gives a random 5 letter word (no double letters!)
         {
             List<string> wordList = new List<string>(){"mouse", "crash", "paint", "drive", "break", "slide", "death"};
             int count = 0;
@@ -19,16 +19,15 @@ namespace Jumper
             return word;
         }
 
-        
-        public List<string> BlankGen() //generates a blank list of 5 _ 
+        public List<string> BlankGen() //generates a blank list (5 blanks)
         {
             List<string> blankList = new List<string>(){"_", "_", "_", "_", "_"};
             return blankList;
         }
 
-        public string LetterGuess() //asks the user for input
+        public string UserGuess()
         {
-            Console.WriteLine("Guess a letter [a-z]: ");
+            Console.Write("Guess a letter [a-z]: ");
             String returnString = Console.ReadLine();
             return returnString;
         }

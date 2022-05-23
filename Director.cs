@@ -17,13 +17,15 @@ namespace Jumper
 
         private void GetInputs()
         {
-            //UserGuess();
+            word.UserGuess();
         }
         private void DoOutputs()
-        {   List<string> blanklist = word.BlankGen();
-            ts.PrintBlanks(blanklist);
-            //PrintParachute();
+        {
+            int misses = 0;
+            List<string> blanklist = word.BlankGen();
 
+            ts.PrintBlanks(blanklist);
+            parachute.PrintParachute(misses);
         }
         private void DoUpdates()
         {
