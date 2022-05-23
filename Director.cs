@@ -10,6 +10,26 @@ namespace Jumper
         {
             //Generates the users random word
             string randomWord = word.WordGen();
+            GetInputs();
+            DoOutputs();
+            DoUpdates();
+        }
+
+        private void GetInputs()
+        {
+            UserGuess();
+        }
+        private void DoOutputs()
+        {
+            PrintBlanks();
+            PrintParachute();
+
+        }
+        private void DoUpdates()
+        {
+            UpdateBlanks();
+            UpdateParachute();
+            CheckIfDone();
         }
     }
 }
