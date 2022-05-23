@@ -6,8 +6,7 @@ namespace Jumper
         private readonly Random _random = new Random();
         public string WordGen() //gives a random 5 letter word (no double letters!)
         {
-            List<string> wordList = new List<string>();
-            wordList = {"mouse", "crash", "paint", "drive", "break", "slide", "death"};
+            List<string> wordList = new List<string>(){"mouse", "crash", "paint", "drive", "break", "slide", "death"};
             int count = 0;
 
             foreach(string forString in wordList)
@@ -32,7 +31,6 @@ namespace Jumper
             Console.WriteLine("Guess a letter [a-z]: ");
             String returnString = Console.ReadLine();
             return returnString;
-            //POSSIBLE ERROR: user may give an int instead of a string
         }
 
         public List<string> UpdateBlank(List<string> updateThisList, int indexToChange, string changeIndexToThis) //changes the lists underscores into the desired letter
