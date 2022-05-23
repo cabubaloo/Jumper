@@ -20,7 +20,7 @@ namespace Jumper
             return word;
         }
 
-        }
+        
         public List<string> BlankGen() //generates a blank list of 5 _ 
         {
             List<string> blankList = new List<string>(){"_", "_", "_", "_", "_"};

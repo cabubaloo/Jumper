@@ -20,8 +20,8 @@ namespace Jumper
             UserGuess();
         }
         private void DoOutputs()
-        {
-            PrintBlanks();
+        {   List<string> blanklist = word.BlankGen();
+            ts.PrintBlanks(blanklist);
             PrintParachute();
 
         }
