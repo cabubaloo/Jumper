@@ -50,6 +50,14 @@ namespace Jumper
             return userGuess;
         }
 
+        public int turns(int total){
+            total += 1;
+
+            return total;
+        }
+
+
+
     }
 
        
