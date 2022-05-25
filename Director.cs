@@ -23,9 +23,10 @@ namespace Jumper
                 DoUpdates(turns, misses);
             }
         }
-        private void GetInputs()
+        private string GetInputs()
         {
-            ts.UserGuess();
+            string userGuess = ts.UserGuess();
+            return userGuess;
         }
         private void DoOutputs()
         {
