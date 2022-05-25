@@ -25,13 +25,6 @@ namespace Jumper
             return blankList;
         }
 
-        public string UserGuess()
-        {
-            Console.Write("Guess a letter [a-z]: ");
-            String returnString = Console.ReadLine();
-            return returnString;
-        }
-
         public List<string> UpdateBlanks(List<string> word, List<string> blanks, string userGuess) //changes the lists underscores into the desired letter
         {
             for (int i = 0; i >= 5; i++)
