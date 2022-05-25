@@ -49,7 +49,7 @@ namespace Jumper
                 Console.WriteLine("Congrats! You didn't die!");
                 return false;
             }
-            else if(wrongGuessNumber == 5)
+            else if(wrongGuessNumber == 4)
             {
                 Console.WriteLine("Ya dead son!");
                 return false;

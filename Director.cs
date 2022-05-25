@@ -45,9 +45,7 @@ namespace Jumper
         }
 
         private void DoUpdates()
-        {   if (oldUserGuessList == userGuessList){
-            oldUserGuessList = userGuessList;
-        }
+        {
             // oldUserGuessList = userGuessList;
 
             userGuessList = word.UpdateBlanks(guessWord, userGuessList, userGuess);
@@ -57,6 +55,11 @@ namespace Jumper
             misses = misses + word.updateMiss(oldUserGuessList, userGuessList);
 
             keepPlaying = ts.CheckIfDone(guessWord, userGuessList, misses);
+
+            for(int i = 0; i <= userGuessList.Count - 1 ; i++)
+            {
+                oldUserGuessList[i] = userGuessList[i];
+            }
         }
 
         private void DoOutputs()
