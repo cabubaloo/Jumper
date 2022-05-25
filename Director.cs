@@ -7,15 +7,15 @@ namespace Jumper
         Parachute parachute = new Parachute();
         TS ts = new TS();
         bool keepPlaying = true;
-        
+        int misses = 0;
         public void startGame()
         {
             while (keepPlaying == true)
             {    
                 //Generates the users random word
                 string randomWord = word.WordGen();
-                GetInputs();
                 DoOutputs();
+                GetInputs();
                 DoUpdates();
             }
         }
@@ -25,8 +25,6 @@ namespace Jumper
         }
         private void DoOutputs()
         {
-            
-            int misses = 0;
             parachute.PrintParachute(misses);
             List<string> blanklist = word.BlankGen();
 
