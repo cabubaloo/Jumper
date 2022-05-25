@@ -7,47 +7,62 @@ namespace Jumper
         private Word word = new Word();
         private Parachute parachute = new Parachute();
         private TS ts = new TS();
+
+
+
         private bool keepPlaying = true;
+        int misses = 0;
+        int turns = 0;
+        string userGuess = "<3";
+        List<string> guessWord = new List<string>(){};
+        List<string> userGuessList = new List<string>(){};
+        List<string> oldUserGuessList = new List<string>(){};
         
 
         public void startGame()
         {
-            int misses = 0;
-            int turns = 0;
+            guessWord = word.SplitString(word.WordGen());
+            userGuessList = word.BlankGen();
+            DoOutputs();
 
-            while (keepPlaying == true)
+            while (keepPlaying == true) //will stay true until CheckIfDone() sets this to false
             {    
-                //Generates the users random word
-                string randomWord = word.WordGen();
-
                 GetInputs();
+                DoUpdates();
                 DoOutputs();
-                DoUpdates(turns, misses);
             }
         }
-        private string GetInputs()
+
+
+        private void GetInputs()
         {
-            string userGuess = ts.UserGuess();
-            return userGuess;
+            foreach(string i in guessWord)
+            {
+                Console.Write(i);
+            }
+            Console.WriteLine();
+            userGuess = ts.UserGuess();
         }
+
+        private void DoUpdates()
+        {
+            oldUserGuessList = userGuessList;
+
+            userGuessList = word.UpdateBlanks(guessWord, userGuessList, userGuess);
+            //oldUserGuessList is being set to equal userGuessList again for some reason.
+            //this leads to misses always being zero.
+
+            misses = misses + word.updateMiss(oldUserGuessList, userGuessList);
+
+            keepPlaying = ts.CheckIfDone(guessWord, userGuessList, misses);
+        }
+
         private void DoOutputs()
         {
-            
-            List<string> blanklist = word.BlankGen();
-
-            ts.PrintBlanks(blanklist);
+            ts.PrintBlanks(userGuessList);
             parachute.PrintParachute(misses);
         }
-        private void DoUpdates(int turnNum, int wrongGuessNumber)
-        {
-            List<string> word = new List<string>(){word.WordGen()};
-            
-            List<string> blanks = new List<string>(){word.UpdateBlanks()};
 
-            keepPlaying = ts.CheckIfDone(word, blanks, turnNum, wrongGuessNumber);
-            //UpdateBlanks();
-            //UpdateParachute();
-            //CheckIfDone();
-        }
+
     }
 }
