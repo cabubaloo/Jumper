@@ -60,6 +60,7 @@ namespace Jumper
                 {
                     counter = counter + 1;
                 }
+                elseif()
             }
 
             if(counter == 5)
