@@ -32,7 +32,7 @@ namespace Jumper
         }
         private void DoOutputs()
         {
-            parachute.PrintParachute(misses);
+            
             List<string> blanklist = word.BlankGen();
 
             ts.PrintBlanks(blanklist);
