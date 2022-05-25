@@ -21,9 +21,8 @@ namespace Jumper
         }
         private void DoOutputs()
         {
-            PrintBlanks(List<string>, blankList);
-            PrintParachute();
             int misses = 0;
+            parachute.PrintParachute(misses);
             List<string> blanklist = word.BlankGen();
 
             ts.PrintBlanks(blanklist);
@@ -31,8 +30,9 @@ namespace Jumper
         }
         private int DoUpdates()
         {
-            UpdateBlanks();
-            UpdateParachute();
+            
+            word.UpdateBlanks();
+            
             keepPlaying = CheckIfDone();
             //UpdateBlanks();
             //UpdateParachute();
