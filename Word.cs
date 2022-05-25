@@ -49,7 +49,7 @@ namespace Jumper
 
         public int updateMiss(List<string> oldWord, List<string> newWord)
         {
-            int missUpdate = 1;
+            int missUpdate = 0;
 
             bool run = false;
             int counter = 0;
@@ -60,6 +60,7 @@ namespace Jumper
                 {
                     counter = counter + 1;
                 }
+                elseif()
             }
 
             if(counter == 5)
@@ -69,7 +70,7 @@ namespace Jumper
 
             if(run)
             {
-                missUpdate = 0;
+                missUpdate = 1;
             }
 
             return missUpdate;
