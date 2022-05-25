@@ -16,7 +16,7 @@ namespace Jumper
         string userGuess = "<3";
         List<string> guessWord = new List<string>(){};
         List<string> userGuessList = new List<string>(){};
-        List<string> oldUserGuessList = new List<string>(){};
+        List<string> oldUserGuessList = new List<string>(){"_", "_", "_", "_", "_"};
         
 
         public void startGame()
@@ -45,8 +45,10 @@ namespace Jumper
         }
 
         private void DoUpdates()
-        {
+        {   if (oldUserGuessList == userGuessList){
             oldUserGuessList = userGuessList;
+        }
+            // oldUserGuessList = userGuessList;
 
             userGuessList = word.UpdateBlanks(guessWord, userGuessList, userGuess);
             //oldUserGuessList is being set to equal userGuessList again for some reason.

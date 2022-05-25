@@ -39,7 +39,7 @@ namespace Jumper
                 }
             }
 
-            if(counter == 4)
+            if(counter == 5)
             {
                 run = true;
             }
