@@ -3,46 +3,48 @@ namespace Jumper
 {
     class Director
     {
+
         private Word word = new Word();
         private Parachute parachute = new Parachute();
         private TS ts = new TS();
         private bool keepPlaying = true;
         
+
         public void startGame()
         {
+            int misses = 0;
+            int turns = 0;
+
             while (keepPlaying == true)
             {    
                 //Generates the users random word
                 string randomWord = word.WordGen();
+
                 GetInputs();
                 DoOutputs();
-                DoUpdates();
+                DoUpdates(turns, misses);
             }
         }
-        private void GetInputs()
+        private string GetInputs()
         {
-            string userguesss = ts.UserGuess();
+            string userGuess = ts.UserGuess();
+            return userGuess;
         }
         private void DoOutputs()
         {
-            
-            int misses = 0;
             parachute.PrintParachute(misses);
             List<string> blanklist = word.BlankGen();
 
             ts.PrintBlanks(blanklist);
             parachute.PrintParachute(misses);
         }
-        private int DoUpdates()
+        private void DoUpdates(int turnNum, int wrongGuessNumber)
         {
-            string Word = word.WordGen();
-            List<string> Blanks = word.BlankGen();
+            List<string> word = new List<string>(){word.WordGen()};
             
+            List<string> blanks = new List<string>(){word.UpdateBlanks()};
 
-
-            word.UpdateBlanks();
-
-            keepPlaying = CheckIfDone();
+            keepPlaying = ts.CheckIfDone(word, blanks, turnNum, wrongGuessNumber);
             //UpdateBlanks();
             //UpdateParachute();
             //CheckIfDone();
