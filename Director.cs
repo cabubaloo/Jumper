@@ -35,11 +35,11 @@ namespace Jumper
         }
         private int DoUpdates()
         {
-            List<string> Word = new List<string>(){word.WordGen()};
+            List<string> word = new List<string>(){word.WordGen()};
             
-            word.UpdateBlanks();
+            List<string> blanks = new List<string>(){word.UpdateBlanks()};
 
-            keepPlaying = CheckIfDone();
+            keepPlaying = ts.CheckIfDone(word, blanks, int turnNumber, int wrongGuessNumber);
             //UpdateBlanks();
             //UpdateParachute();
             //CheckIfDone();
