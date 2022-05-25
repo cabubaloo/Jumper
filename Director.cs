@@ -10,13 +10,17 @@ namespace Jumper
         int misses = 0;
         public void startGame()
         {
+            int misses = 0;
+            int turns = 0;
+
             while (keepPlaying == true)
             {    
                 //Generates the users random word
                 string randomWord = word.WordGen();
-                DoOutputs();
+
                 GetInputs();
-                DoUpdates();
+                DoOutputs();
+                DoUpdates(turns, misses);
             }
         }
         private void GetInputs()
@@ -31,13 +35,13 @@ namespace Jumper
             ts.PrintBlanks(blanklist);
             parachute.PrintParachute(misses);
         }
-        private int DoUpdates()
+        private void DoUpdates(int turnNum, int wrongGuessNumber)
         {
-            List<string> Word = new List<string>(){word.WordGen()};
+            List<string> word = new List<string>(){word.WordGen()};
             
-            word.UpdateBlanks();
+            List<string> blanks = new List<string>(){word.UpdateBlanks()};
 
-            keepPlaying = ts.CheckIfDone();
+            keepPlaying = ts.CheckIfDone(word, blanks, turnNum, wrongGuessNumber);
             //UpdateBlanks();
             //UpdateParachute();
             //CheckIfDone();
