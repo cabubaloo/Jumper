@@ -21,7 +21,7 @@ namespace Jumper
         }
         private void GetInputs()
         {
-            word.UserGuess();
+            ts.UserGuess();
         }
         private void DoOutputs()
         {
