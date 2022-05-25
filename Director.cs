@@ -39,7 +39,7 @@ namespace Jumper
             
             word.UpdateBlanks();
 
-            keepPlaying = CheckIfDone();
+            keepPlaying = ts.CheckIfDone();
             //UpdateBlanks();
             //UpdateParachute();
             //CheckIfDone();
