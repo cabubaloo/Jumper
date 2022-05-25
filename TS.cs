@@ -66,22 +66,10 @@ namespace Jumper
             string userGuess = Console.ReadLine();
             return userGuess;
         }
-        public int CheckIfCorrect(string userGuess, List<string> word)
-        {
-            foreach(string letter in word)
-            {
-                if(letter == userGuess)
-                {
-                    return 1;
-                }
-                else
-                {
-                    continue;
-                }
-            }
+        
+            
         }
 
     }
 
        
-}
