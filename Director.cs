@@ -35,7 +35,7 @@ namespace Jumper
         }
         private int DoUpdates()
         {
-            List<string> Word = word.WordGen();
+            List<string> Word = new List<string>(){word.WordGen()};
             
             word.UpdateBlanks();
 
