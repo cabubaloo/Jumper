@@ -3,10 +3,10 @@ namespace Jumper
 {
     class Director
     {
-        Word word = new Word();
-        Parachute parachute = new Parachute();
-        TS ts = new TS();
-        bool keepPlaying = true;
+        private Word word = new Word();
+        private Parachute parachute = new Parachute();
+        private TS ts = new TS();
+        private bool keepPlaying = true;
         
         public void startGame()
         {
@@ -21,7 +21,7 @@ namespace Jumper
         }
         private void GetInputs()
         {
-            ts.UserGuess();
+            string userguesss = ts.UserGuess();
         }
         private void DoOutputs()
         {
@@ -35,8 +35,11 @@ namespace Jumper
         }
         private int DoUpdates()
         {
-            List<string> Word = word.WordGen();
+            string Word = word.WordGen();
+            List<string> Blanks = word.BlankGen();
             
+
+
             word.UpdateBlanks();
 
             keepPlaying = CheckIfDone();
