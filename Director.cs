@@ -21,15 +21,15 @@ namespace Jumper
         }
         private void DoOutputs()
         {
-            PrintBlanks();
+            PrintBlanks(List<string>, blankList);
             PrintParachute();
 
         }
-        private void DoUpdates()
+        private int DoUpdates()
         {
             UpdateBlanks();
             UpdateParachute();
-            CheckIfDone();
+            keepPlaying = CheckIfDone();
         }
     }
 }

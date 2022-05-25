@@ -35,10 +35,16 @@ namespace Jumper
             //POSSIBLE ERROR: user may give an int instead of a string
         }
 
-        public List<string> updateBlank(List<string> updateThisList, int indexToChange, string changeIndexToThis) //changes the lists underscores into the desired letter
+        public List<string> UpdateBlanks(List<string> word, List<string> blanks, string userGuess) //changes the lists underscores into the desired letter
         {
-            updateThisList[indexToChange] = changeIndexToThis;
-            return updateThisList;
+            for (int i = 0; i >= 5; i++)
+            {
+                if (word[i] == userGuess)
+                {
+                    blanks[i] = word[i];
+                }
+            }
+            return blanks;
         }
 
     }

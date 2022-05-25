@@ -18,6 +18,31 @@ namespace Jumper
             Console.WriteLine(blanklist);
         }
 
+        public bool CheckIfDone(List<string> word, List<string> blanks, int turnNumber, int wrongGuessNumber)
+        {
+            if(word == blanks)
+            {
+                Console.WriteLine("Congrats! You didn't die!");
+                return false;
+            }
+            else if(wrongGuessNumber == turnNumber - 5)
+            {
+                Console.WriteLine("Ya dead son!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public string UserGuess()
+        {
+            Console.WriteLine("Guess a letter: ");
+            string userGuess = Console.ReadLine();
+            return userGuess;
+        }
+
     }
 
        
