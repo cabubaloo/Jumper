@@ -9,18 +9,21 @@ namespace Jumper
         bool keepPlaying = true;
         
         public void startGame()
-        {
+        {   
+            int turns = 0;
             while (keepPlaying == true)
             {    
                 //Generates the users random word
                 string randomWord = word.WordGen();
                 GetInputs();
+                ts.turns(turns);
                 DoOutputs();
                 DoUpdates();
             }
         }
         private void GetInputs()
         {
+
             ts.UserGuess();
         }
         private void DoOutputs()
