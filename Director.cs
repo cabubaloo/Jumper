@@ -8,8 +8,6 @@ namespace Jumper
         private Parachute parachute = new Parachute();
         private TS ts = new TS();
 
-
-
         private bool keepPlaying = true;
         int misses = 0;
         int turns = 0;
@@ -25,7 +23,7 @@ namespace Jumper
             userGuessList = word.BlankGen();
             DoOutputs();
 
-            while (keepPlaying == true) //will stay true until CheckIfDone() sets this to false
+            while (keepPlaying == true)
             {    
                 GetInputs();
                 DoUpdates();
@@ -60,6 +58,7 @@ namespace Jumper
         private void DoOutputs()
         {
             ts.PrintBlanks(userGuessList);
+            Console.WriteLine();
             parachute.PrintParachute(misses);
         }
 

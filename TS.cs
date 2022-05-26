@@ -66,10 +66,13 @@ namespace Jumper
             string userGuess = Console.ReadLine();
             return userGuess;
         }
-        
-            
-        }
 
+        public int turns(int total)
+        {
+            total += 1;
+            return total;
+        }
     }
+}
 
        

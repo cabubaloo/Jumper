@@ -6,7 +6,38 @@ namespace Jumper
         private readonly Random _random = new Random();
         public string WordGen()//gives a random 5 letter word (no double letters!)
         {
-            List<string> wordList = new List<string>(){"mouse", "crash", "paint", "drive", "break", "slide", "death"};
+            List<string> wordList = new List<string>(){
+"eeeee",
+"mouse", 
+"crash", 
+"paint", 
+"drive", 
+"break", 
+"slide", 
+"death", 
+"which",
+"there",
+"their",
+"about",
+"would",
+"these",
+"other",
+"words",
+"could",
+"write",
+"first",
+"water",
+"after",
+"where",
+"right",
+"think",
+"three",
+"years",
+"place",
+"sound",
+"great",
+"again",
+"still"};
             int count = 0;
 
             foreach(string forString in wordList)
@@ -15,7 +46,6 @@ namespace Jumper
             }
             int randomInt =  _random.Next(0,count - 1);
             string word = wordList[randomInt];
-
             return word;
         }
 
@@ -60,7 +90,6 @@ namespace Jumper
                 {
                     counter = counter + 1;
                 }
-                elseif()
             }
 
             if(counter == 5)
