@@ -29,6 +29,8 @@ namespace Jumper
                 DoUpdates();
                 DoOutputs();
             }
+
+            Console.WriteLine($"\nThe word was: {guessWord[0]}{guessWord[1]}{guessWord[2]}{guessWord[3]}{guessWord[4]}");
         }
 
 
