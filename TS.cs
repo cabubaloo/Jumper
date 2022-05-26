@@ -19,20 +19,37 @@ namespace Jumper
         public void PrintBlanks(List<string> blanklist)
         {
             // Takes a blanklist and prints it to the console. 
+            Console.WriteLine();
             foreach(string i in blanklist)
             {
                 Console.Write(i + " ");
             }
         }
 
-        public bool CheckIfDone(List<string> word, List<string> blanks, int turnNumber, int wrongGuessNumber)
+        public bool CheckIfDone(List<string> word, List<string> blanks, int wrongGuessNumber)
         {
-            if(word == blanks)
+            bool run = false;
+            int counter = 0;
+
+            for(int z = 0; z <= 4; z++)
+            {
+                if(word[z] == blanks[z])
+                {
+                    counter = counter + 1;
+                }
+            }
+
+            if(counter == 5)
+            {
+                run = true;
+            }
+
+            if(run)
             {
                 Console.WriteLine("Congrats! You didn't die!");
                 return false;
             }
-            else if(wrongGuessNumber == turnNumber - 5)
+            else if(wrongGuessNumber == 4)
             {
                 Console.WriteLine("Ya dead son!");
                 return false;
@@ -45,9 +62,12 @@ namespace Jumper
 
         public string UserGuess()
         {
-            Console.WriteLine("Guess a letter: ");
+            Console.Write("Guess a letter: ");
             string userGuess = Console.ReadLine();
             return userGuess;
+        }
+        
+            
         }
 
         public int turns(int total){
@@ -61,4 +81,3 @@ namespace Jumper
     }
 
        
-}

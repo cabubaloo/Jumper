@@ -27,7 +27,7 @@ namespace Jumper
 
         public List<string> UpdateBlanks(List<string> word, List<string> blanks, string userGuess) //changes the lists underscores into the desired letter
         {
-            for (int i = 0; i >= 5; i++)
+            for (int i = 0; i <= 4; i++)
             {
                 if (word[i] == userGuess)
                 {
@@ -42,10 +42,38 @@ namespace Jumper
             List<string> wordlist = new List<string>(){};
             for(int i = 0; i < word.Length; i++)
             {
-                wordlist.Add(word.Substring(i, i + 1));
+                wordlist.Add(word[i].ToString());
             }
             return wordlist;
         }
 
+        public int updateMiss(List<string> oldWord, List<string> newWord)
+        {
+            int missUpdate = 0;
+
+            bool run = false;
+            int counter = 0;
+
+            for(int z = 0; z <= 4; z++)
+            {
+                if(oldWord[z] == newWord[z])
+                {
+                    counter = counter + 1;
+                }
+                elseif()
+            }
+
+            if(counter == 5)
+            {
+                run = true;
+            }
+
+            if(run)
+            {
+                missUpdate = 1;
+            }
+
+            return missUpdate;
+        }
     }
 }
