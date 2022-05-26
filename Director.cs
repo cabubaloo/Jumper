@@ -36,11 +36,6 @@ namespace Jumper
 
         private void GetInputs()
         {
-            foreach(string i in guessWord)
-            {
-                Console.Write(i);
-            }
-            Console.WriteLine();
             userGuess = ts.UserGuess();
         }
 
