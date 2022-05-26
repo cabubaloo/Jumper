@@ -3,46 +3,59 @@ namespace Jumper
 {
     class Director
     {
-        Word word = new Word();
-        Parachute parachute = new Parachute();
-        TS ts = new TS();
-        bool keepPlaying = true;
+
+        private Word word = new Word();
+        private Parachute parachute = new Parachute();
+        private TS ts = new TS();
+        private bool keepPlaying = true;
         
+
         public void startGame()
+<<<<<<< HEAD
         {   
             int turns = 0;
+=======
+        {
+            int misses = 0;
+            int turns = 0;
+
+>>>>>>> a473dc6393d35a294c68b0a0d61312960c7a28c5
             while (keepPlaying == true)
             {    
                 //Generates the users random word
                 string randomWord = word.WordGen();
+
                 GetInputs();
                 ts.turns(turns);
                 DoOutputs();
-                DoUpdates();
+                DoUpdates(turns, misses);
             }
         }
-        private void GetInputs()
+        private string GetInputs()
         {
+<<<<<<< HEAD
 
             ts.UserGuess();
+=======
+            string userGuess = ts.UserGuess();
+            return userGuess;
+>>>>>>> a473dc6393d35a294c68b0a0d61312960c7a28c5
         }
         private void DoOutputs()
         {
             
-            int misses = 0;
-            parachute.PrintParachute(misses);
             List<string> blanklist = word.BlankGen();
 
             ts.PrintBlanks(blanklist);
             parachute.PrintParachute(misses);
         }
-        private int DoUpdates()
+        private void DoUpdates(int turnNum, int wrongGuessNumber)
         {
-            List<string> Word = new List<string>(){word.WordGen()};
+            List<string> word = new List<string>(){word.WordGen()};
             
-            word.UpdateBlanks();
+            List<string> blanks = new List<string>(){word.UpdateBlanks()};
 
-            keepPlaying = CheckIfDone();
+            keepPlaying = ts.CheckIfDone(word, blanks, turnNum, wrongGuessNumber);
             //UpdateBlanks();
             //UpdateParachute();
             //CheckIfDone();
