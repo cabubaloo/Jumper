@@ -60,7 +60,7 @@ namespace Jumper
                 {
                     counter = counter + 1;
                 }
-                elseif()
+                
             }
 
             if(counter == 5)
@@ -70,7 +70,7 @@ namespace Jumper
 
             if(run)
             {
-                missUpdate = 1;
+                missUpdate = 0;
             }
 
             return missUpdate;
